@@ -13,6 +13,6 @@ func RouteTransaction(e *echo.Echo, bc domain.TransactionHandler) {
 		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAuthorization},
 		AllowMethods: []string{echo.GET, echo.POST, echo.PUT, echo.DELETE},
 	}))
-	e.POST("/limit", bc.InsertTransaction())
-	e.GET("/limit/:id", bc.GetTransactionID())
+	e.POST("/trx", bc.InsertTransaction())
+	e.GET("/trx/:id", bc.GetTransactionID())
 }

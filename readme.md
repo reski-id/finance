@@ -70,7 +70,13 @@ Limit
 | `POST`        | /limit       | Add Limit         
 | `GET`         | /limit/:id       | Get single Limit
 | `DELETE`      | /limit/:id   | Delete Limit   
-| `PUT`         | /limit/:id   | Update Limit   
+| `PUT`         | /limit/:id   | Update Limit
+
+Transaction
+| Methode       | End Point       | used for                
+| ------------- | -------------   | -----------            
+| `POST`        | /trx       | Add Transaction         
+| `GET`         | /trx/:id       | Get Transaction
 
 ## 🛠️ Technologi
 
