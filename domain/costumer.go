@@ -21,18 +21,6 @@ type Costumer struct {
 	UpdatedAt    time.Time
 }
 
-type Transaction struct {
-	ContractNumber  string    `json:"contract_number"`
-	OTR             float64   `json:"otr"`
-	AdminFee        float64   `json:"admin_fee"`
-	Installments    int       `json:"installments"`
-	Interest        float64   `json:"interest"`
-	AssetName       string    `json:"asset_name"`
-	CustomerID      int       `json:"customer_id"`
-	TransactionID   string    `json:"transaction_id"`
-	TransactionDate time.Time `json:"transaction_date"`
-}
-
 type CostumerHandler interface {
 	InsertCostumer() echo.HandlerFunc
 	UpdateCostumer() echo.HandlerFunc

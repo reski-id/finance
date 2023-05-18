@@ -7,6 +7,7 @@ import (
 
 	costumerData "finance/feature/costumer/data"
 	limitData "finance/feature/limit/data"
+	tranData "finance/feature/transaction/data"
 	userData "finance/feature/user/data"
 
 	"golang.org/x/crypto/bcrypt"
@@ -25,7 +26,7 @@ func InitDB(cfg *config.AppConfig) *gorm.DB {
 }
 
 func MigrateData(db *gorm.DB) {
-	db.AutoMigrate(userData.User{}, costumerData.Costumer{}, limitData.Limit{})
+	db.AutoMigrate(userData.User{}, costumerData.Costumer{}, limitData.Limit{}, tranData.Transaction{})
 }
 
 func SeedUsers(db *gorm.DB) {
