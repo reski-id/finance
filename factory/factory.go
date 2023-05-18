@@ -16,6 +16,10 @@ import (
 	ld "finance/feature/limit/data"
 	limitDelivery "finance/feature/limit/delivery"
 	lu "finance/feature/limit/usecase"
+
+	td "finance/feature/transaction/data"
+	transactionDelivery "finance/feature/transaction/delivery"
+	tu "finance/feature/transaction/usecase"
 )
 
 func Initfactory(e *echo.Echo, db *gorm.DB) {
@@ -26,12 +30,17 @@ func Initfactory(e *echo.Echo, db *gorm.DB) {
 	userDelivery.RouteUser(e, userHandler)
 
 	costumerData := dd.New(db)
-	contentDCase := du.New(costumerData)
-	contentDHandler := costumerDelivery.New(contentDCase)
-	costumerDelivery.RouteCostumer(e, contentDHandler)
+	contentCase := du.New(costumerData)
+	contentHandler := costumerDelivery.New(contentCase)
+	costumerDelivery.RouteCostumer(e, contentHandler)
 
 	limitData := ld.New(db)
 	limitDCase := lu.New(limitData)
 	limitDHandler := limitDelivery.New(limitDCase)
 	limitDelivery.RouteLimit(e, limitDHandler)
+
+	transactionData := td.New(db)
+	transactionCase := tu.New(transactionData)
+	transactionHandler := transactionDelivery.New(transactionCase)
+	transactionDelivery.RouteTransaction(e, transactionHandler)
 }
