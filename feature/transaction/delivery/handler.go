@@ -10,12 +10,12 @@ import (
 )
 
 type transactionHandler struct {
-	limitUseCase domain.TransactionUseCase
+	transactionUseCase domain.TransactionUseCase
 }
 
 func New(nu domain.TransactionUseCase) domain.TransactionHandler {
 	return &transactionHandler{
-		limitUseCase: nu,
+		transactionUseCase: nu,
 	}
 }
 
@@ -29,7 +29,7 @@ func (nh *transactionHandler) InsertTransaction() echo.HandlerFunc {
 			c.JSON(http.StatusBadRequest, "error read input")
 		}
 
-		data, err := nh.limitUseCase.AddTransaction(tmp.ToDomain())
+		data, err := nh.transactionUseCase.AddTransaction(tmp.ToDomain())
 		if err != nil {
 			log.Println("Cannot proces data,ID sudah Ada", err)
 
@@ -49,7 +49,7 @@ func (nh *transactionHandler) GetTransactionID() echo.HandlerFunc {
 
 		idTransaction := c.Param("id")
 		id, _ := strconv.Atoi(idTransaction)
-		data, err := nh.limitUseCase.GetSpecificTransaction(id)
+		data, err := nh.transactionUseCase.GetSpecificTransaction(id)
 
 		if err != nil {
 			log.Println("Cannot get data", err)
