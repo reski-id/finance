@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "509fc8e5-ce77-41ed-8bfb-5859804df4dd",
+		"name": "finance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21893722",
+		"_collection_link": "https://www.postman.com/telecoms-astronaut-25388017/workspace/gin/collection/21893722-509fc8e5-ce77-41ed-8bfb-5859804df4dd?action=share&creator=21893722&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "reski2144",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "pesanw.reski@gmail.comq12d",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123455",
+									"type": "text"
+								},
+								{
+									"key": "fullname",
+									"value": "Ahmad Reski",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "reski2144",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123455",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "costumer",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nik\": \"33333\",\r\n  \"full_name\": \"John Doe\",\r\n  \"legal_name\": \"John\",\r\n  \"place_of_birth\": \"Jakarta\",\r\n  \"salary\": 5000,\r\n  \"ktp_photo\": \"ktp.jpg\",\r\n  \"selfie_photo\": \"selfie.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/costumer",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"costumer"
+							],
+							"query": [
+								{
+									"key": "nik",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/costumer",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"costumer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getsingle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/costumer/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"costumer",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/costumer/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"costumer",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nik\": \"3333311\",\r\n  \"full_name\": \"John Doe upad\",\r\n  \"legal_name\": \"John\",\r\n  \"place_of_birth\": \"Jakarta\",\r\n  \"salary\": 5000,\r\n  \"ktp_photo\": \"ktp.jpg\",\r\n  \"selfie_photo\": \"selfie.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/costumer/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"costumer",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
