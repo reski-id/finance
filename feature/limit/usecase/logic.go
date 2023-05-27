@@ -49,10 +49,10 @@ func (nu *limitUseCase) DelLimit(IDLimit int) (bool, error) {
 }
 
 func (nu *limitUseCase) GetSpecificLimit(dataID int) ([]domain.Limit, error) {
-	res := nu.costumerData.GetLimitID(dataID)
 	if dataID == -1 {
 		return nil, errors.New("error update data")
 	}
 
+	res := nu.costumerData.GetLimitID(dataID)
 	return res, nil
 }

@@ -54,7 +54,7 @@ func (nd *limitData) Delete(dataID int) error {
 
 func (nd *limitData) GetLimitID(dataID int) []domain.Limit {
 	var data []Limit
-	err := nd.db.Where("ID = ?", dataID).First(&data)
+	err := nd.db.Where("ID = ?", dataID).Find(&data)
 
 	if err.Error != nil {
 		log.Println("problem data", err.Error.Error())
